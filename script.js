@@ -3,7 +3,25 @@
    File: script.js
    ============================================================ */
 
-/* ── WHATSAPP FORM SUBMISSION ── */
+/* ── TAB TOGGLE ── */
+let activeTab = 'whatsapp';
+
+function showTab(tab) {
+  activeTab = tab;
+
+  // Toggle button styles
+  document.getElementById('btnWhatsapp').classList.toggle('active', tab === 'whatsapp');
+  document.getElementById('btnEmail').classList.toggle('active', tab === 'email');
+
+  // Toggle submit buttons
+  document.getElementById('submitWhatsapp').style.display = tab === 'whatsapp' ? 'block' : 'none';
+  document.getElementById('submitEmail').style.display    = tab === 'email'     ? 'block' : 'none';
+
+  // Toggle email input field
+  document.getElementById('emailFieldGroup').style.display = tab === 'email' ? 'block' : 'none';
+}
+
+/* ── WHATSAPP SUBMISSION ── */
 function submitToWhatsApp() {
   const name  = document.getElementById('fname').value.trim();
   const phone = document.getElementById('fphone').value.trim();
@@ -12,12 +30,10 @@ function submitToWhatsApp() {
   const pax   = document.getElementById('fpax').value.trim();
   const msg   = document.getElementById('fmsg').value.trim();
 
-  // Validation
   if (!name)  { alert('Please enter your name!'); return; }
   if (!phone) { alert('Please enter your mobile number!'); return; }
   if (!route) { alert('Please select a route!'); return; }
 
-  // Build WhatsApp message
   const message =
 `*New Enquiry -- Pahadi Travels*
 
@@ -31,9 +47,54 @@ function submitToWhatsApp() {
   const encoded = encodeURIComponent(message);
   window.open(`https://wa.me/919217682499?text=${encoded}`, '_blank');
 
-  // Show success message after opening WhatsApp
-  document.getElementById('formBox').style.display   = 'none';
+  document.getElementById('formBox').style.display    = 'none';
   document.getElementById('successMsg').style.display = 'block';
+}
+
+/* ── EMAIL SUBMISSION (Formspree) ── */
+async function submitToEmail() {
+  const name  = document.getElementById('fname').value.trim();
+  const phone = document.getElementById('fphone').value.trim();
+  const route = document.getElementById('froute').value.trim();
+  const email = document.getElementById('femail').value.trim();
+  const date  = document.getElementById('fdate').value.trim();
+  const pax   = document.getElementById('fpax').value.trim();
+  const msg   = document.getElementById('fmsg').value.trim();
+
+  if (!name)  { alert('Please enter your name!'); return; }
+  if (!phone) { alert('Please enter your mobile number!'); return; }
+  if (!route) { alert('Please select a route!'); return; }
+  if (!email) { alert('Please enter your email address!'); return; }
+
+  const btn = document.getElementById('submitEmail');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  try {
+    const response = await fetch('https://formspree.io/f/xykander', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        name, phone, route,
+        email, travel_date: date || 'Not specified',
+        passengers: pax || 'Not specified',
+        message: msg || 'No additional message'
+      })
+    });
+
+    if (response.ok) {
+      document.getElementById('formBox').style.display    = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    } else {
+      alert('Something went wrong. Please try WhatsApp instead!');
+      btn.textContent = '📧 Send via Email';
+      btn.disabled = false;
+    }
+  } catch (err) {
+    alert('Network error. Please try WhatsApp instead!');
+    btn.textContent = '📧 Send via Email';
+    btn.disabled = false;
+  }
 }
 
 /* ── SCROLL REVEAL ── */
