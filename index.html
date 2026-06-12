@@ -221,95 +221,123 @@
     <div class="contact-wrap">
 
       <!-- Contact Info -->
-      <div class="contact-info">
-        <h2>Let's Plan<br/>Your Trip</h2>
-        <p>Send me an enquiry or just call directly. I'll get back to you quickly and we'll sort out the details — route, timing, and fare — in one conversation.</p>
+     <!-- Contact Info -->
+<div class="contact-info">
+  <h2>Let's Plan<br/>Your Trip</h2>
+  <p>Send me an enquiry or just call directly. I'll get back to you quickly and we'll sort out the details — route, timing, and fare — in one conversation.</p>
+  <div class="info-item">
+    <div class="info-icon">📞</div>
+    <div class="info-text">
+      <strong>Call or WhatsApp</strong>
+      +91 92176 82499
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon">📍</div>
+    <div class="info-text">
+      <strong>Based in</strong>
+      Delhi NCR — available for pickup<br/>anywhere in Delhi &amp; NCR
+    </div>
+  </div>
+  <div class="info-item">
+    <div class="info-icon">🕐</div>
+    <div class="info-text">
+      <strong>Available</strong>
+      7 days a week · Early morning to late night
+    </div>
+  </div>
+  <a href="https://wa.me/919217682499" class="whatsapp-btn" target="_blank">
+    💬 Chat on WhatsApp
+  </a>
+</div>
 
-        <div class="info-item">
-          <div class="info-icon">📞</div>
-          <div class="info-text">
-            <strong>Call or WhatsApp</strong>
-            +91 XXXXX XXXXX
-          </div>
-        </div>
+<!-- Enquiry Form -->
+<div class="contact-form">
+  <h3>Send an Enquiry</h3>
+  <div id="formBox">
 
-        <div class="info-item">
-          <div class="info-icon">📍</div>
-          <div class="info-text">
-            <strong>Based in</strong>
-            Delhi NCR — available for pickup<br/>anywhere in Delhi &amp; NCR
-          </div>
-        </div>
-
-        <div class="info-item">
-          <div class="info-icon">🕐</div>
-          <div class="info-text">
-            <strong>Available</strong>
-            7 days a week · Early morning to late night
-          </div>
-        </div>
-
-        <a href="https://wa.me/" class="whatsapp-btn" target="_blank">
-          💬 Chat on WhatsApp
-        </a>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="fname">Your Name *</label>
+        <input type="text" id="fname" placeholder="Rahul Sharma"/>
       </div>
+      <div class="form-group">
+        <label for="fphone">Mobile Number *</label>
+        <input type="tel" id="fphone" placeholder="+91 98XXXXXXXX"/>
+      </div>
+    </div>
 
-      <!-- Enquiry Form -->
-      <div class="contact-form">
-        <h3>Send an Enquiry</h3>
+    <div class="form-group">
+      <label for="froute">Route *</label>
+      <select id="froute">
+        <option value="">-- Select Route --</option>
+        <option>Delhi → Pauri Garhwal</option>
+        <option>Pauri Garhwal → Delhi</option>
+        <option>Delhi → Rishikesh</option>
+        <option>Rishikesh → Delhi</option>
+        <option>Delhi → Haridwar</option>
+        <option>Haridwar → Delhi</option>
+        <option>Other / Not sure</option>
+      </select>
+    </div>
 
-        <div id="formBox">
-          <div class="form-row">
-            <div class="form-group">
-              <label for="fname">Your Name *</label>
-              <input type="text" id="fname" placeholder="Rahul Sharma"/>
-            </div>
-            <div class="form-group">
-              <label for="fphone">Mobile Number *</label>
-              <input type="tel" id="fphone" placeholder="+91 98XXXXXXXX"/>
-            </div>
-          </div>
+    <div class="form-row">
+      <div class="form-group">
+        <label for="fdate">Travel Date</label>
+        <input type="date" id="fdate"/>
+      </div>
+      <div class="form-group">
+        <label for="fpax">No. of Passengers</label>
+        <select id="fpax">
+          <option value="">-- Select --</option>
+          <option>1 Person</option>
+          <option>2 People</option>
+          <option>3–4 People</option>
+        </select>
+      </div>
+    </div>
 
-          <div class="form-group">
-            <label for="froute">Route *</label>
-            <select id="froute">
-              <option value="">-- Select Route --</option>
-              <option>Delhi → Pauri Garhwal</option>
-              <option>Pauri Garhwal → Delhi</option>
-              <option>Delhi → Rishikesh</option>
-              <option>Rishikesh → Delhi</option>
-              <option>Delhi → Haridwar</option>
-              <option>Haridwar → Delhi</option>
-              <option>Other / Not sure</option>
-            </select>
-          </div>
+    <div class="form-group">
+      <label for="fmsg">Pickup Location / Any Message</label>
+      <textarea id="fmsg" placeholder="E.g. Pickup from Kashmere Gate at 5 AM, need child seat, returning same day..."></textarea>
+    </div>
 
-          <div class="form-row">
-            <div class="form-group">
-              <label for="fdate">Travel Date</label>
-              <input type="date" id="fdate"/>
-            </div>
-            <div class="form-group">
-              <label for="fpax">No. of Passengers</label>
-              <select id="fpax">
-                <option value="">-- Select --</option>
-                <option>1 Person</option>
-                <option>2 People</option>
-                <option>3–4 People</option>
-                
-               
-              </select>
-            </div>
-          </div>
+    <button class="form-submit" onclick="submitToWhatsApp()">Send Enquiry 🙏</button>
+    <p class="form-note">✅ No advance payment needed · I'll call you back soon</p>
 
-          <div class="form-group">
-            <label for="fmsg">Pickup Location / Any Message</label>
-            <textarea id="fmsg" placeholder="E.g. Pickup from Kashmere Gate at 5 AM, need child seat, returning same day..."></textarea>
-          </div>
+  </div>
+</div>
 
-          <button class="form-submit" onclick="submitForm()">Send Enquiry 🙏</button>
-          <p class="form-note">✅ No advance payment needed · I'll call you back soon</p>
-        </div>
+<!-- WhatsApp Submit Script -->
+<script>
+  function submitToWhatsApp() {
+    const name = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    const route = document.getElementById('froute').value.trim();
+    const date = document.getElementById('fdate').value.trim();
+    const pax = document.getElementById('fpax').value.trim();
+    const msg = document.getElementById('fmsg').value.trim();
+
+    // Validation
+    if (!name) { alert('Please enter your name!'); return; }
+    if (!phone) { alert('Please enter your mobile number!'); return; }
+    if (!route) { alert('Please select a route!'); return; }
+
+    // Build WhatsApp message
+    const message = 
+`🙏 *New Enquiry — Pahadi Travels*
+
+👤 *Name:* ${name}
+📞 *Mobile:* ${phone}
+🗺️ *Route:* ${route}
+📅 *Travel Date:* ${date || 'Not specified'}
+👥 *Passengers:* ${pax || 'Not specified'}
+💬 *Message:* ${msg || 'No additional message'}`;
+
+    const encoded = encodeURIComponent(message);
+    window.open(`https://wa.me/919217682499?text=${encoded}`, '_blank');
+  }
+</script>
 
         <!-- Success State -->
         <div class="success-msg" id="successMsg">
