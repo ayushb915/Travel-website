@@ -308,36 +308,7 @@
   </div>
 </div>
 
-<!-- WhatsApp Submit Script -->
-<script>
-  function submitToWhatsApp() {
-    const name = document.getElementById('fname').value.trim();
-    const phone = document.getElementById('fphone').value.trim();
-    const route = document.getElementById('froute').value.trim();
-    const date = document.getElementById('fdate').value.trim();
-    const pax = document.getElementById('fpax').value.trim();
-    const msg = document.getElementById('fmsg').value.trim();
 
-    // Validation
-    if (!name) { alert('Please enter your name!'); return; }
-    if (!phone) { alert('Please enter your mobile number!'); return; }
-    if (!route) { alert('Please select a route!'); return; }
-
-    // Build WhatsApp message
-    const message = 
-`🙏 *New Enquiry — Pahadi Travels*
-
-👤 *Name:* ${name}
-📞 *Mobile:* ${phone}
-🗺️ *Route:* ${route}
-📅 *Travel Date:* ${date || 'Not specified'}
-👥 *Passengers:* ${pax || 'Not specified'}
-💬 *Message:* ${msg || 'No additional message'}`;
-
-    const encoded = encodeURIComponent(message);
-    window.open(`https://wa.me/919217682499?text=${encoded}`, '_blank');
-  }
-</script>
 
         <!-- Success State -->
         <div class="success-msg" id="successMsg">
