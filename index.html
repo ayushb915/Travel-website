@@ -221,7 +221,7 @@
     <div class="contact-wrap">
 
       <!-- Contact Info -->
-     <!-- Contact Info -->
+    
 <div class="contact-info">
   <h2>Let's Plan<br/>Your Trip</h2>
   <p>Send me an enquiry or just call directly. I'll get back to you quickly and we'll sort out the details — route, timing, and fare — in one conversation.</p>
@@ -254,6 +254,13 @@
 <!-- Enquiry Form -->
 <div class="contact-form">
   <h3>Send an Enquiry</h3>
+
+  <!-- Toggle Buttons -->
+  <div class="form-toggle">
+    <button class="toggle-btn active" id="btnWhatsapp" onclick="showTab('whatsapp')">💬 WhatsApp</button>
+    <button class="toggle-btn" id="btnEmail" onclick="showTab('email')">📧 Email</button>
+  </div>
+
   <div id="formBox">
 
     <div class="form-row">
@@ -297,26 +304,19 @@
       </div>
     </div>
 
+    <!-- Email field — only shown in email tab -->
+    <div class="form-group" id="emailFieldGroup" style="display:none;">
+      <label for="femail">Your Email *</label>
+      <input type="email" id="femail" placeholder="rahul@gmail.com"/>
+    </div>
+
     <div class="form-group">
       <label for="fmsg">Pickup Location / Any Message</label>
       <textarea id="fmsg" placeholder="E.g. Pickup from Kashmere Gate at 5 AM, need child seat, returning same day..."></textarea>
     </div>
 
-    <button class="form-submit" onclick="submitToWhatsApp()">Send Enquiry </button>
-    <p class="form-note">✅ No advance payment needed · I'll call you back soon</p>
-
-  </div>
-</div>
-
-
-
-        <!-- Success State -->
-        <div class="success-msg" id="successMsg">
-          <div style="font-size:2.5rem; margin-bottom:0.8rem">🙏</div>
-          <h4>Got it! I'll call you shortly.</h4>
-          <p>Thanks for reaching out. I'll get back to you as soon as possible to confirm the booking details.</p>
-        </div>
-
+    <!-- WhatsApp Button -->
+    <button class="form-submit" id="submitWhatsapp" onclick="submitToWhatsApp()">💬 Send via Whatsapp.
       </div>
     </div>
   </section>
