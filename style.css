@@ -711,25 +711,58 @@ footer p { font-size: 0.86rem; }
   to   { opacity: 1; transform: translateY(0); }
 }
 /* ── FORM TOGGLE BUTTONS ── */
+/* FORM TOGGLE BUTTONS */
 .form-toggle {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 1.5rem;
 }
 
 .toggle-btn {
-  flex: 1;
-  padding: 0.7rem 1rem;
-  border: 2px solid #2d6a4f;
-  background: transparent;
-  color: #2d6a4f;
-  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-width: 130px;
+  height: 46px;
+
+  border: 2px solid var(--green-mid);
+  background: #fff;
+
+  color: var(--green-mid);
   font-size: 0.95rem;
   font-weight: 600;
+
+  border-radius: 8px;
   cursor: pointer;
-  transition: all 0.2s ease;
+
+  transition: all 0.25s ease;
 }
 
+.toggle-btn:hover {
+  background: #edf6f0;
+  transform: translateY(-1px);
+}
+
+.toggle-btn.active {
+  background: var(--green-mid);
+  color: #fff;
+  border-color: var(--green-mid);
+}
+
+.toggle-btn i,
+.toggle-btn svg {
+  font-size: 1rem;
+}
+
+.email-submit {
+  background: #1a73e8 !important;
+}
+
+.email-submit:hover {
+  background: #1558b0 !important;
+}
 .toggle-btn.active {
   background: #2d6a4f;
   color: #fff;
