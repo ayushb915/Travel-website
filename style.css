@@ -710,7 +710,42 @@ footer p { font-size: 0.86rem; }
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+/* ── FORM TOGGLE BUTTONS ── */
+.form-toggle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
 
+.toggle-btn {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: 2px solid #2d6a4f;
+  background: transparent;
+  color: #2d6a4f;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle-btn.active {
+  background: #2d6a4f;
+  color: #fff;
+}
+
+.toggle-btn:hover:not(.active) {
+  background: #f0faf5;
+}
+
+.email-submit {
+  background: #1a73e8 !important;
+}
+
+.email-submit:hover {
+  background: #1558b0 !important;
+}
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   nav { padding: 1rem 1.5rem; }
