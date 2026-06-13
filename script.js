@@ -9,15 +9,12 @@ let activeTab = 'whatsapp';
 function showTab(tab) {
   activeTab = tab;
 
-  // Toggle button styles
   document.getElementById('btnWhatsapp').classList.toggle('active', tab === 'whatsapp');
   document.getElementById('btnEmail').classList.toggle('active', tab === 'email');
 
-  // Toggle submit buttons
   document.getElementById('submitWhatsapp').style.display = tab === 'whatsapp' ? 'block' : 'none';
   document.getElementById('submitEmail').style.display    = tab === 'email'     ? 'block' : 'none';
 
-  // Toggle email input field
   document.getElementById('emailFieldGroup').style.display = tab === 'email' ? 'block' : 'none';
 }
 
