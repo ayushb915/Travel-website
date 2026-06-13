@@ -111,11 +111,7 @@ nav {
   left: 0;
   right: 0;
   height: 130px;
-  background: linear-gradient(
-  to top,
-  rgba(245, 240, 230, 0.4),
-  transparent
-);
+  background: linear-gradient(to top, rgba(245, 240, 230, 0.4), transparent);
   pointer-events: none;
 }
 
@@ -322,6 +318,7 @@ section { padding: 5rem 3rem; }
   flex-wrap: wrap;
   padding: 0.9rem 1.5rem;
   border-top: 1px solid #f0ebe2;
+  min-height: 48px;
 }
 
 .meta-pill {
@@ -556,9 +553,40 @@ section { padding: 5rem 3rem; }
   font-family: 'Playfair Display', serif;
   font-size: 1.45rem;
   color: var(--green-deep);
+  margin-bottom: 1.2rem;
+}
+
+/* ── FORM TOGGLE BUTTONS ── */
+.form-toggle {
+  display: flex;
+  gap: 10px;
   margin-bottom: 1.6rem;
 }
 
+.toggle-btn {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: 2px solid var(--green-deep);
+  background: transparent;
+  color: var(--green-deep);
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle-btn.active {
+  background: var(--green-deep);
+  color: #fff;
+}
+
+.toggle-btn:hover:not(.active) {
+  background: var(--cream);
+}
+
+/* ── FORM FIELDS ── */
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -604,6 +632,7 @@ section { padding: 5rem 3rem; }
   min-height: 100px;
 }
 
+/* ── SUBMIT BUTTONS ── */
 .form-submit {
   width: 100%;
   padding: 0.95rem;
@@ -622,6 +651,15 @@ section { padding: 5rem 3rem; }
 
 .form-submit:hover {
   background: var(--green-mid);
+  transform: translateY(-1px);
+}
+
+.email-submit {
+  background: #1a73e8;
+}
+
+.email-submit:hover {
+  background: #1558b0;
   transform: translateY(-1px);
 }
 
@@ -710,75 +748,7 @@ footer p { font-size: 0.86rem; }
   from { opacity: 0; transform: translateY(28px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-/* ── FORM TOGGLE BUTTONS ── */
-/* FORM TOGGLE BUTTONS */
-.form-toggle {
-  display: flex;
-  gap: 12px;
-  margin-bottom: 1.5rem;
-}
 
-.toggle-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-
-  min-width: 130px;
-  height: 46px;
-
-  border: 2px solid var(--green-mid);
-  background: #fff;
-
-  color: var(--green-mid);
-  font-size: 0.95rem;
-  font-weight: 600;
-
-  border-radius: 8px;
-  cursor: pointer;
-
-  transition: all 0.25s ease;
-}
-
-.toggle-btn:hover {
-  background: #edf6f0;
-  transform: translateY(-1px);
-}
-
-.toggle-btn.active {
-  background: var(--green-mid);
-  color: #fff;
-  border-color: var(--green-mid);
-}
-
-.toggle-btn i,
-.toggle-btn svg {
-  font-size: 1rem;
-}
-
-.email-submit {
-  background: #1a73e8 !important;
-}
-
-.email-submit:hover {
-  background: #1558b0 !important;
-}
-.toggle-btn.active {
-  background: #2d6a4f;
-  color: #fff;
-}
-
-.toggle-btn:hover:not(.active) {
-  background: #f0faf5;
-}
-
-.email-submit {
-  background: #1a73e8 !important;
-}
-
-.email-submit:hover {
-  background: #1558b0 !important;
-}
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
   nav { padding: 1rem 1.5rem; }
