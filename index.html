@@ -305,9 +305,9 @@
     </div>
 
     <!-- Email field — only shown in email tab -->
-    <div class="form-group">
-  <label for="fmsg">Pickup Location / Any Message</label>
-  <textarea id="fmsg"></textarea>
+   <div class="form-group" id="emailFieldGroup" style="display:none;">
+  <label for="femail">Your Email *</label>
+  <input type="email" id="femail" placeholder="rahul@gmail.com">
 </div>
 
 <button
@@ -326,6 +326,10 @@
 >
   📧 Send via Email
 </button>
+    </div> <!-- formBox -->
+</div> <!-- contact-form -->
+</div> <!-- contact-wrap -->
+</section> <!-- contact -->
      <script>
 showTab('whatsapp');
 </script>
