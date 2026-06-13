@@ -305,23 +305,27 @@
     </div>
 
     <!-- Email field — only shown in email tab -->
-    <div class="form-group" id="emailFieldGroup" style="display:none;">
-      <label for="femail">Your Email *</label>
-      <input type="email" id="femail" placeholder="rahul@gmail.com"/>
-    </div>
-
     <div class="form-group">
-      <label for="fmsg">Pickup Location / Any Message</label>
-      <textarea id="fmsg" placeholder="E.g. Pickup from Kashmere Gate at 5 AM, need child seat, returning same day..."></textarea>
-    </div>
+  <label for="fmsg">Pickup Location / Any Message</label>
+  <textarea id="fmsg"></textarea>
+</div>
 
-    <!-- WhatsApp Button -->
-    <button class="form-submit" id="submitWhatsapp" onclick="submitToWhatsApp()">💬 Send via Whatsapp.
-    </button>
-      </div>
-    </div>
-  </section>
+<button
+  class="form-submit"
+  id="submitWhatsapp"
+  onclick="submitToWhatsApp()"
+>
+  💬 Send via WhatsApp
+</button>
 
+<button
+  class="form-submit email-submit"
+  id="submitEmail"
+  onclick="submitToEmail()"
+  style="display:none;"
+>
+  📧 Send via Email
+</button>
   <!-- ══════════════════════════════
        FOOTER
   ══════════════════════════════ -->
@@ -339,5 +343,8 @@
   </footer>
 
   <script src="script.js"></script>
+    <script>
+showTab('whatsapp');
+</script>
 </body>
 </html>
